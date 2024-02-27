@@ -54,9 +54,9 @@ export default function Home() {
       />
       <button onClick={() => getData()}>search</button>
       {!loading && data != undefined &&
-        (data as Array<any>).map((d) => {
+        (data as Array<any>).map((d, i) => {
           return (
-            <div className="py-4">
+            <div className="py-4" key={i}>
               <h2>title: {d?.["dc:title"]}</h2>
               <h4>author: {d?.["dc:creator"]}</h4>
               <h5>publisher: {d?.["prism:publicationName"]}</h5>
